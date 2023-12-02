@@ -1,31 +1,25 @@
-package armstrong;
+package Armstrong;
+
 import java.util.Scanner;
 
-public class Armstrongnum {
+public class Arm {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter a number: ");
-		int number = scanner.nextInt();
-		int originalNumber, remainder, result = 0, n = 0;
-		originalNumber = number;
-		for (; originalNumber != 0; originalNumber /= 10, ++n)
-			;
-		originalNumber = number;
-		while (originalNumber != 0) {
-			remainder = originalNumber % 10;
-			int powerResult = 1;
-			for (int i = 0; i < n; i++) {
-				powerResult *= remainder;
-			}
-			result += powerResult;
-			originalNumber /= 10;
-		}
-		if (result == number) {
-			System.out.println(number + " is an Armstrong number.");
-		} else {
-			System.out.println(number + " is not an Armstrong number.");
-		}
-
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the number :");
+int no = sc.nextInt();
+		int no1= no;
+int arm = 0;
+do {
+ int rem = no%10;
+ arm =arm+(rem*rem*rem);
+ no =no/10;
+	}while(no>0);
+if(no1 ==arm) {
+	System.out.println("Armstrong number");
+}else {
+	System.out.println("Not a Armstrong number");
+}
 	}
 }
+
